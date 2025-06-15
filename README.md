@@ -3,8 +3,9 @@ Current deep learning methods for drug-target interaction (DTI) prediction are s
 At the core is a distillation-based pretraining process:
 A teacher model with an Equivariant Graph Attention (E-GAT) module learns structural patterns from known protein 3D structures.
 A student model, using a lightweight Graph-Like sparse attention (G-L) module, learns to capture similar features using sequence data only.
+Once trained, the G-L module can be plugged into downstream tasks for efficient and structure-aware sequence encoding.
 
-Once trained, the G-L module can be plugged into downstream tasks for efficient and structure-aware sequence encoding. We also introduce BS-MIX, a classifier that combines Riemannian and Euclidean correlation features and dynamically focuses on BS-relevant regions—boosting both accuracy and interpretability in DTI prediction.
+We also introduce BS-MIX, a classifier that combines Riemannian and Euclidean correlation features and dynamically focuses on BS-relevant regions—boosting both accuracy and interpretability in DTI prediction.
 
 <img src="./image/intro.png" alt="model"  width="70%"/>
 
