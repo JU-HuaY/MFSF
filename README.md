@@ -18,10 +18,18 @@ BioPython | 1.79
 **Our model consists of three parts: Pretraining process, BS prediction and DTI prediction**
 <img src="./image/method.png" alt="model"  width="70%"/>
 
-
 ## Pretrained extractor
 
-The source file of the pre-trained model is in "Representation.py", the model is trained with "train.py", and the hidden feature inference is done with "Inference.py".
+The source file of the pre-trained model is in "Representation.py", we can run the "main.py" to pretrain the model. 
+
+setting
+```python
+>>> train_dataset = Protein_pkl_Dataset(root_dir='BS_data/train')
+>>> validation_dataset = Protein_pkl_Dataset(root_dir='BS_data/validation')
+>>> model = Representation_model(3, 512, 256, 64, 128, batchs, device)
+>>> model = model.to(device)
+```
+Then, the pretrained model that was saved will be used for BS and DTI prediction.
 
 ## BS prediction
 We can run main.py. This file will also import "merge.py" and "model.py";
