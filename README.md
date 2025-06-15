@@ -15,7 +15,16 @@ RDKit | 2022.03
 BioPython | 1.79
 ### Install via conda yaml file (cuda 11.3)
 
-**Our model consists of two part: DTI prediction and Pretrained extractor**
+**Our model consists of three parts: Pretraining process, BS prediction and DTI prediction**
+<img src="./image/method.png" alt="model"  width="70%"/>
+
+
+## Pretrained extractor
+
+The source file of the pre-trained model is in "Representation.py", the model is trained with "train.py", and the hidden feature inference is done with "Inference.py".
+
+## BS prediction
+
 ## DTI prediction
 Data_process: 
 
@@ -34,7 +43,5 @@ The only thing we have to do is to write the data protocols and the save path;
 
 The specific data protocols are described in the file "data_merge.py";
 
-## Pretrained extractor
 
-The source file of the pre-trained model is in "Representation.py", the model is trained with "train.py", and the hidden feature inference is done with "Inference.py".
 
