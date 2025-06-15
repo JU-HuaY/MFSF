@@ -24,23 +24,25 @@ BioPython | 1.79
 The source file of the pre-trained model is in "Representation.py", the model is trained with "train.py", and the hidden feature inference is done with "Inference.py".
 
 ## BS prediction
+We can run main.py. This file will also import "merge.py" and "model.py";
 
-## DTI prediction
-Data_process: 
-
-The original data is first processed by the code document "Predata.py";
-              
-Then, we can run main.py. This file will also import "merge.py" and "model.py";
-
-The only thing we have to do is to write the data protocols and the save path;
-              
+example of setting
 ```python
->>> data_select = "H_to_H"
->>> setting = "H_to_H"
->>> file_AUCs = 'output/result/AUCs--' + setting + '.txt'
->>> file_model = 'output/model/' + setting
+>>> dataset_name = "DNA"
+>>> train_name = "DNA-646"
+>>> test_name = "DNA-181"
+>>> target_model_state_dict = model.state_dict()
+>>> source_model_state_dict = torch.load("output/model/pretrain_new_2")
 ```
+## DTI prediction
+We can run main.py. This file will also import "merge.py" and "model.py";
 
+example of setting    
+```python
+>>> data_select = "D_to_D"
+>>> target_model_state_dict = model.state_dict()
+>>> source_model_state_dict = torch.load("output/model/pretrain_new_2")
+```
 The specific data protocols are described in the file "data_merge.py";
 
 
