@@ -16,7 +16,7 @@ The codes have been tested in the following environment:
 Package  | Version
 --- | ---
 Python | 3.8.0
-PyTorch | 1.13.0
+PyTorch | 1.8.0
 CUDA | 11.7
 PyTorch Geometric | **2.3.1**
 RDKit | 2022.09.5
