@@ -15,13 +15,13 @@ We also introduce BS-MIX, a classifier that combines Riemannian and Euclidean co
 The codes have been tested in the following environment:
 Package  | Version
 --- | ---
-Python | 3.8.12
-PyTorch | 1.10.1
-CUDA | 11.3.1
-PyTorch Geometric | **2.0.0**
-RDKit | 2022.03
+Python | 3.8.0
+PyTorch | 1.8.0
+CUDA | 11.7
+PyTorch Geometric | **2.3.1**
+RDKit | 2022.09.5
 BioPython | 1.79
-### Install via conda yaml file (cuda 11.3)
+### Install via conda yaml file (cuda 11.7)
 
 **Our model consists of three parts: Pretraining process, BS prediction and DTI prediction**
 <img src="./image/method.png" alt="model"  width="70%"/>
