@@ -177,15 +177,7 @@ def merge(train_list, test_list, device, DTI=True):
 
 def data_load(data_select, device):
     # p_LMs, d_LMs = {}, {}
-    if data_select == "B_to_B":
-        train_list = ["datasets/BindingDB"]
-        test_list = ["datasets/BindingDB"]
-        train_dataset, test_dataset, p_LMs, d_LMs = merge(train_list, test_list, device)
-    elif data_select == "B_to_B_fine":
-        train_list = ["datasets/BindingDB/validation"]
-        test_list = ["datasets/BindingDB"]
-        train_dataset, test_dataset, p_LMs, d_LMs = merge(train_list, test_list, device)
-    elif data_select == "D_to_D":
+    if data_select == "D_to_D":
         train_list = ["/mnt/fast/nobackup/scratch4weeks/yh01358/DTI_Prediction/datasets/Drugbank"]
         test_list = ["/mnt/fast/nobackup/scratch4weeks/yh01358/DTI_Prediction/datasets/Drugbank"]
         train_set, val_set, test_dataset, p_LMs, d_LMs = merge2(train_list, test_list, device)
@@ -193,14 +185,10 @@ def data_load(data_select, device):
         train_list = ["/mnt/fast/nobackup/scratch4weeks/yh01358/DTI_Prediction/datasets/Davis"]#, "datasets/Davis/split2"]
         test_list = ["/mnt/fast/nobackup/scratch4weeks/yh01358/DTI_Prediction/datasets/Davis"]
         train_set, val_set, test_dataset, p_LMs, d_LMs = merge(train_list, test_list, device, DTI=False)
-    elif data_select == "K_to_K":
+    else:
         train_list = ["/mnt/fast/nobackup/scratch4weeks/yh01358/DTI_Prediction/datasets/KIBA"]#, "datasets/KIBA/split2"]
         test_list = ["/mnt/fast/nobackup/scratch4weeks/yh01358/DTI_Prediction/datasets/KIBA"]
         train_set, val_set, test_dataset, p_LMs, d_LMs = merge(train_list, test_list, device, DTI=False)
-    else:
-        train_list = ["datasets/Human"]
-        test_list = ["datasets/Human"]
-        train_dataset, test_dataset, p_LMs, d_LMs = merge(train_list, test_list, device)
 
     return train_set, val_set, test_dataset, p_LMs, d_LMs
 
